@@ -249,6 +249,206 @@ st.markdown(
             .signal-footer {
                 border-color: #3B2E46;
             }
+
+            /* Responsive control and content safeguards */
+
+[data-testid="stSegmentedControl"] {
+    width: 100%;
+}
+
+[data-testid="stSegmentedControl"] > div {
+    width: 100%;
+}
+
+[data-testid="stSegmentedControl"] button {
+    min-height: 2.75rem;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    padding: 0.55rem 0.8rem !important;
+}
+
+[data-testid="stTabs"] button {
+    min-height: 2.6rem;
+    white-space: normal !important;
+}
+
+.stButton > button {
+    min-height: 2.7rem;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+[data-testid="stMetric"] {
+    overflow-wrap: anywhere;
+}
+
+.insight-card,
+.workspace-card,
+.workspace {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 900px) {
+    .block-container {
+        max-width: 100%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .signal-hero {
+        padding: 2.6rem 2rem;
+    }
+
+    .section-heading {
+        max-width: 100%;
+    }
+
+    .workspace-title {
+        font-size: 1.4rem;
+    }
+
+    .insight-card,
+    .workspace-card {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .block-container {
+        padding: 1rem 0.85rem 2rem 0.85rem;
+    }
+
+    .signal-hero {
+        border-radius: 14px;
+        padding: 2rem 1.15rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .signal-hero h1 {
+        font-size: clamp(2.55rem, 14vw, 4.2rem);
+    }
+
+    .signal-hero p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .section-kicker {
+        margin-top: 1.7rem;
+    }
+
+    .section-heading {
+        font-size: clamp(1.8rem, 9vw, 2.7rem);
+        line-height: 1.05;
+    }
+
+    .section-copy {
+        font-size: 0.98rem;
+    }
+
+    .workspace {
+        border-radius: 14px;
+        padding: 1rem;
+    }
+
+    .workspace-title {
+        font-size: 1.3rem;
+        line-height: 1.15;
+    }
+
+    .workspace-card,
+    .insight-card {
+        border-radius: 13px;
+        padding: 1rem;
+        min-height: 0;
+    }
+
+    [data-testid="stSegmentedControl"] {
+        overflow-x: visible;
+    }
+
+    [data-testid="stSegmentedControl"] button {
+        min-height: 3rem;
+        font-size: 0.82rem !important;
+        padding: 0.55rem 0.45rem !important;
+    }
+
+    [data-testid="stTabs"] {
+        overflow-x: auto;
+    }
+
+    [data-testid="stTabs"] button {
+        font-size: 0.85rem !important;
+        padding-left: 0.55rem;
+        padding-right: 0.55rem;
+    }
+
+    .metric-value {
+        font-size: 1.95rem;
+    }
+
+    .signal-footer {
+        margin-top: 2.5rem;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-testid="stSegmentedControl"] {
+        display: block;
+    }
+
+    [data-testid="stSegmentedControl"] > div {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+    }
+
+    [data-testid="stSegmentedControl"] button {
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+        border-radius: 0.7rem !important;
+        min-height: 2.8rem;
+    }
+
+    [data-testid="stTabs"] button {
+        font-size: 0.78rem !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-testid="stSegmentedControl"] button,
+    [data-testid="stTabs"] button {
+        color: #F7F3FA !important;
+    }
+
+    [data-testid="stSegmentedControl"] button[aria-checked="true"] {
+        background: #632CA6 !important;
+        color: #FFFFFF !important;
+    }
+
+    [data-testid="stTabs"] button[aria-selected="true"] {
+        color: #FFFFFF !important;
+        border-color: #8000FF !important;
+    }
+
+    .stButton > button {
+        border-color: #632CA6 !important;
+        color: #F7F3FA !important;
+        background: #1D1424 !important;
+    }
+
+    .stButton > button[kind="primary"] {
+        background: #632CA6 !important;
+        color: #FFFFFF !important;
+    }
         }
     </style>
     """,
@@ -293,7 +493,7 @@ if page == "Explore":
 
     context = st.segmented_control(
         "Choose a product context",
-        ["AI investigation", "Monitoring workspace", "Operational summary"],
+        ["AI investigation", "Monitoring", "Operational summary"],
         default="AI investigation",
         label_visibility="collapsed",
         width="stretch",
@@ -913,9 +1113,9 @@ elif page == "Decisions":
     decision = st.segmented_control(
         "Choose a design decision",
         [
-            "Visible AI reasoning",
-            "Useful information density",
-            "Contextual adaptation",
+            "AI reasoning",
+            "Information density",
+            "Context adaptation",
         ],
         default="Visible AI reasoning",
         label_visibility="collapsed",
@@ -1289,7 +1489,7 @@ else:
 
     validation_context = st.segmented_control(
         "Choose a validation context",
-        ["AI investigation", "Monitoring workspace", "Operational summary"],
+        ["AI investigation", "Monitoring", "Operational summary"],
         default="AI investigation",
         label_visibility="collapsed",
         width="stretch",
