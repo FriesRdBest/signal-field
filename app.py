@@ -1443,7 +1443,7 @@ elif page == "Decisions":
 
 st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
-    elif decision == "Information density":
+    
         st.markdown(
             """
             <section class="workspace">
