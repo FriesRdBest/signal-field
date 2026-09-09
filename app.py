@@ -1440,8 +1440,9 @@ elif page == "Decisions":
                 unsafe_allow_html=True,
             )
 
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
-st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
+    elif decision == "Information density":
 
     
         st.markdown(
