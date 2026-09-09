@@ -563,14 +563,338 @@ elif page == "System":
         <div class="section-kicker">System</div>
         <div class="section-heading">Expression becomes reliable when it becomes repeatable.</div>
         <p class="section-copy">
-            The next page will make the tokens, hierarchy rules, semantic colour meaning,
-            spacing, and component anatomy behind Signal Field inspectable.
+            Signal Field translates visual direction into a small set of reusable rules.
+            Each rule helps people recognize importance, understand state, and retain orientation.
         </p>
         """,
         unsafe_allow_html=True,
     )
 
-    st.info("System content is the next build step.")
+    token_tab, hierarchy_tab, spacing_tab, anatomy_tab = st.tabs(
+        ["Tokens", "Hierarchy", "Spacing", "Component anatomy"]
+    )
+
+    with token_tab:
+        st.markdown("#### Colour has a job")
+
+        st.markdown(
+            """
+            <p class="section-copy">
+                Colour is reserved for direction, state, and focus. It never carries meaning alone.
+                Labels, position, and clear language remain visible in every condition.
+            </p>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        token_one, token_two, token_three, token_four, token_five = st.columns(5)
+
+        with token_one:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:52px; border-radius:10px; background:#110617; margin-bottom:1rem;"></div>
+                    <h3>Night field</h3>
+                    <p>#110617<br>Focused inspection and immersive product fields.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with token_two:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:52px; border-radius:10px; background:#632CA6; margin-bottom:1rem;"></div>
+                    <h3>Signal violet</h3>
+                    <p>#632CA6<br>Primary action, active state, and meaningful direction.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with token_three:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:52px; border-radius:10px; background:#8000FF; margin-bottom:1rem;"></div>
+                    <h3>Electric violet</h3>
+                    <p>#8000FF<br>Rare moments of emphasis and future facing focus.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with token_four:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:52px; border-radius:10px; background:#2E8B70; margin-bottom:1rem;"></div>
+                    <h3>Confidence</h3>
+                    <p>#2E8B70<br>Positive state, paired with clear supporting language.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with token_five:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:52px; border-radius:10px; background:#D97706; margin-bottom:1rem;"></div>
+                    <h3>Attention</h3>
+                    <p>#D97706<br>Unresolved condition, paired with an explanation and next step.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        st.markdown("")
+
+        surface_one, surface_two, surface_three, surface_four = st.columns(4)
+
+        with surface_one:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:42px; border-radius:10px; background:#F5F5F5; border:1px solid #E1E5E9; margin-bottom:1rem;"></div>
+                    <h3>Cloud surface</h3>
+                    <p>#F5F5F5<br>Quiet page fields and secondary surfaces.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with surface_two:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:42px; border-radius:10px; background:#FFFFFF; border:1px solid #E1E5E9; margin-bottom:1rem;"></div>
+                    <h3>White surface</h3>
+                    <p>#FFFFFF<br>Primary reading and working surfaces.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with surface_three:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:42px; border-radius:10px; background:#E1E5E9; margin-bottom:1rem;"></div>
+                    <h3>Structure line</h3>
+                    <p>#E1E5E9<br>Dividers, boundaries, and low emphasis structure.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with surface_four:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <div style="height:42px; border-radius:10px; background:#4A4F55; margin-bottom:1rem;"></div>
+                    <h3>Quiet graphite</h3>
+                    <p>#4A4F55<br>Supporting copy, labels, and metadata.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+    with hierarchy_tab:
+        st.markdown("#### The eye needs a reliable path")
+
+        st.markdown(
+            """
+            <p class="section-copy">
+                The system uses hierarchy to move from condition, to context, to action.
+                Information may be dense, but its reading order should never be unclear.
+            </p>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        hierarchy_left, hierarchy_right = st.columns([1.2, 1])
+
+        with hierarchy_left:
+            st.markdown(
+                """
+                <section class="workspace">
+                    <div class="workspace-label">Hierarchy example</div>
+                    <div class="workspace-title">Payment service latency exceeds expected range</div>
+                    <div class="status-good">High confidence</div>
+                    <p style="color:#C9BFD3; font-size:1rem; line-height:1.55; margin:1rem 0 0 0;">
+                        Trace volume and database wait time changed after a related deployment.
+                    </p>
+                    <div style="margin-top:1.4rem; color:#FFFFFF; font-weight:800;">
+                        Create investigation →
+                    </div>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with hierarchy_right:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>01 Condition</h3>
+                    <p>The primary condition earns the largest type and strongest contrast.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>02 Context</h3>
+                    <p>Evidence and confidence explain why the condition deserves attention.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>03 Action</h3>
+                    <p>A clear next step follows understanding rather than replacing it.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+    with spacing_tab:
+        st.markdown("#### Space gives information room to be understood")
+
+        st.markdown(
+            """
+            <p class="section-copy">
+                Signal Field uses a four point rhythm. The purpose is not visual decoration.
+                Consistent spacing creates scan paths, separates tasks, and helps dense content breathe.
+            </p>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        spacing_one, spacing_two, spacing_three, spacing_four, spacing_five = st.columns(5)
+
+        spacing_values = [
+            ("04", "Tight relationship", "Icon beside label"),
+            ("08", "Related content", "Label beside value"),
+            ("16", "Within a component", "Heading above supporting copy"),
+            ("24", "Between components", "Card to card separation"),
+            ("40", "Between sections", "New decision context"),
+        ]
+
+        for column, value in zip(
+            [spacing_one, spacing_two, spacing_three, spacing_four, spacing_five],
+            spacing_values,
+        ):
+            number, label, use = value
+            with column:
+                st.markdown(
+                    f"""
+                    <section class="insight-card">
+                        <div style="color:#632CA6; font-size:2.4rem; font-weight:800; line-height:1;">{number}</div>
+                        <h3 style="margin-top:1rem;">{label}</h3>
+                        <p>{use}</p>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+        st.markdown(
+            """
+            <section class="workspace" style="margin-top:1.5rem;">
+                <div class="workspace-label">Spacing in practice</div>
+                <div style="background:#1D1424; border:1px solid #3B2E46; border-radius:14px; padding:24px;">
+                    <div style="color:#FFFFFF; font-weight:800; font-size:1.35rem;">Primary condition</div>
+                    <div style="height:8px;"></div>
+                    <div style="color:#C9BFD3;">Evidence and confidence remain related without competing with the condition.</div>
+                    <div style="height:16px;"></div>
+                    <div style="border-top:1px solid #3B2E46;"></div>
+                    <div style="height:16px;"></div>
+                    <div style="color:#FFFFFF; font-weight:800;">Next action →</div>
+                </div>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with anatomy_tab:
+        st.markdown("#### Components preserve a familiar reading pattern")
+
+        st.markdown(
+            """
+            <p class="section-copy">
+                A component has a stable anatomy. Context may change its content and emphasis,
+                but people should recognize where to find the condition, evidence, state, and next action.
+            </p>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        anatomy_left, anatomy_right = st.columns([1.35, 1])
+
+        with anatomy_left:
+            st.markdown(
+                """
+                <section class="workspace">
+                    <div class="workspace-label">Alert component</div>
+                    <div style="background:#1D1424; border:1px solid #3B2E46; border-radius:14px; padding:1.5rem;">
+                        <div style="color:#C9BFD3; font-size:0.78rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase;">01 Context label</div>
+                        <div style="color:#FFFFFF; font-size:1.45rem; font-weight:800; margin-top:0.55rem;">Payment service latency exceeds expected range</div>
+                        <div style="color:#2E8B70; font-size:0.82rem; font-weight:800; margin-top:1rem;">02 High confidence</div>
+                        <div style="color:#C9BFD3; font-size:0.95rem; line-height:1.5; margin-top:0.45rem;">03 Correlated trace, database, and deployment signals explain the recommendation.</div>
+                        <div style="color:#FFFFFF; font-size:0.95rem; font-weight:800; margin-top:1.25rem;">04 Create investigation →</div>
+                    </div>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with anatomy_right:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>01 Context</h3>
+                    <p>Names the source or type of information.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>02 State</h3>
+                    <p>Communicates confidence or urgency with colour and written meaning.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>03 Evidence</h3>
+                    <p>Explains the condition with concise, inspectable signals.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>04 Action</h3>
+                    <p>Moves the user forward after they have enough context to act.</p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
 
 elif page == "Decisions":
     st.markdown(
