@@ -1117,12 +1117,12 @@ elif page == "Decisions":
             "Information density",
             "Context adaptation",
         ],
-        default="Visible AI reasoning",
+        default="AI reasoning",
         label_visibility="collapsed",
         width="stretch",
     )
 
-    if decision == "Visible AI reasoning":
+    if decision == "AI reasoning":
         st.markdown(
             """
             <section class="workspace">
@@ -1227,7 +1227,7 @@ elif page == "Decisions":
                 unsafe_allow_html=True,
             )
 
-    elif decision == "Useful information density":
+    elif decision == "Information density":
         st.markdown(
             """
             <section class="workspace">
