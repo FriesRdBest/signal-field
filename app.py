@@ -193,6 +193,235 @@ st.markdown(
             margin: 0;
         }
 
+
+/* Global layout rhythm */
+
+div[data-testid="stHorizontalBlock"] {
+    gap: 1.15rem;
+    align-items: stretch;
+}
+
+div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] {
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+
+div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] + div[data-testid="stHorizontalBlock"] {
+    margin-top: 1.15rem;
+}
+
+/* Card system */
+
+.insight-card {
+    background: #FFFFFF;
+    border: 1px solid #E1E5E9;
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(17, 6, 23, 0.04);
+    padding: 1.45rem;
+    min-height: 0;
+    margin: 0;
+    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.insight-card:hover {
+    border-color: rgba(99, 44, 166, 0.38);
+    box-shadow: 0 10px 28px rgba(17, 6, 23, 0.09);
+    transform: translateY(-2px);
+}
+
+.workspace {
+    background: linear-gradient(135deg, #110617 0%, #1D1424 100%);
+    border: 1px solid #3B2E46;
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(17, 6, 23, 0.16);
+    padding: 1.6rem;
+    margin: 1.4rem 0 1.1rem 0;
+}
+
+.workspace-card {
+    background: linear-gradient(180deg, #251B2E 0%, #1D1424 100%);
+    border: 1px solid #3B2E46;
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    padding: 1.25rem;
+    min-height: 0;
+    margin: 0;
+}
+
+.workspace-card:hover {
+    border-color: rgba(128, 0, 255, 0.62);
+}
+
+/* Native Streamlit card and control polish */
+
+[data-testid="stSegmentedControl"] {
+    background: #FFFFFF;
+    border: 1px solid #E1E5E9;
+    border-radius: 14px;
+    padding: 0.24rem;
+    margin: 1.25rem 0 1.55rem 0;
+}
+
+[data-testid="stSegmentedControl"] button {
+    border: 0 !important;
+    border-radius: 10px !important;
+    color: #4A4F55 !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stSegmentedControl"] button[aria-checked="true"] {
+    background: #632CA6 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 2px 7px rgba(99, 44, 166, 0.26);
+}
+
+[data-testid="stTabs"] {
+    margin: 1.2rem 0 1.6rem 0;
+}
+
+[data-testid="stTabs"] [data-baseweb="tab-list"] {
+    gap: 0.45rem;
+    border-bottom: 1px solid #E1E5E9;
+}
+
+[data-testid="stTabs"] button {
+    border-radius: 10px 10px 0 0;
+    color: #4A4F55;
+    font-weight: 700;
+    padding: 0.7rem 0.9rem;
+}
+
+[data-testid="stTabs"] button[aria-selected="true"] {
+    color: #632CA6 !important;
+    border-bottom: 3px solid #632CA6 !important;
+}
+
+.stButton > button {
+    background: #FFFFFF;
+    border: 1px solid #632CA6;
+    border-radius: 10px;
+    box-shadow: none;
+    color: #632CA6;
+    font-weight: 750;
+    min-height: 2.8rem;
+    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.stButton > button:hover {
+    background: #F1EAFE;
+    border-color: #632CA6;
+    color: #632CA6;
+    transform: translateY(-1px);
+}
+
+.stButton > button[kind="primary"] {
+    background: #632CA6;
+    border-color: #632CA6;
+    color: #FFFFFF;
+    box-shadow: 0 5px 14px rgba(99, 44, 166, 0.22);
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: #54248F;
+    border-color: #54248F;
+    color: #FFFFFF;
+}
+
+/* Helpful separation after the two card rows on Validation */
+
+.validation-gap {
+    height: 1.15rem;
+}
+
+/* Dark system preference */
+
+@media (prefers-color-scheme: dark) {
+    [data-testid="stSegmentedControl"] {
+        background: #1D1424;
+        border-color: #3B2E46;
+    }
+
+    [data-testid="stSegmentedControl"] button {
+        color: #C9BFD3 !important;
+    }
+
+    [data-testid="stSegmentedControl"] button[aria-checked="true"] {
+        background: #632CA6 !important;
+        color: #FFFFFF !important;
+    }
+
+    [data-testid="stTabs"] [data-baseweb="tab-list"] {
+        border-color: #3B2E46;
+    }
+
+    [data-testid="stTabs"] button {
+        color: #C9BFD3 !important;
+    }
+
+    [data-testid="stTabs"] button[aria-selected="true"] {
+        color: #FFFFFF !important;
+        border-color: #8000FF !important;
+    }
+
+    .insight-card {
+        background: #1D1424;
+        border-color: #3B2E46;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+    }
+
+    .insight-card:hover {
+        border-color: rgba(128, 0, 255, 0.7);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    .stButton > button {
+        background: #1D1424;
+        border-color: #632CA6;
+        color: #F7F3FA;
+    }
+
+    .stButton > button:hover {
+        background: #251B2E;
+        border-color: #8000FF;
+        color: #FFFFFF;
+    }
+
+    .stButton > button[kind="primary"] {
+        background: #632CA6;
+        border-color: #632CA6;
+        color: #FFFFFF;
+    }
+}
+
+/* Phone rhythm */
+
+@media (max-width: 700px) {
+    div[data-testid="stHorizontalBlock"] {
+        gap: 0.85rem;
+    }
+
+    div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] + div[data-testid="stHorizontalBlock"] {
+        margin-top: 0.85rem;
+    }
+
+    .workspace {
+        border-radius: 16px;
+        padding: 1.1rem;
+        margin: 1.1rem 0 0.9rem 0;
+    }
+
+    .workspace-card,
+    .insight-card {
+        border-radius: 14px;
+        padding: 1.1rem;
+    }
+
+    [data-testid="stSegmentedControl"] {
+        margin: 1rem 0 1.25rem 0;
+    }
+}
+ 
+
         .signal-footer {
             border-top: 1px solid #E1E5E9;
             color: #4A4F55;
@@ -542,23 +771,7 @@ if page == "Explore":
                 unsafe_allow_html=True,
             )
 
-        st.markdown("")
-
-        action_one, action_two, action_three, action_space = st.columns([1, 1, 1.2, 1.6])
-
-        with action_one:
-            st.button("Inspect evidence", use_container_width=True)
-
-        with action_two:
-            st.button("Compare baseline", use_container_width=True)
-
-        with action_three:
-            st.button("Create investigation", type="primary", use_container_width=True)
-
-        with action_space:
-            st.empty()
-
-        st.markdown("")
+     v      
 
         note_one, note_two, note_three = st.columns(3)
 
@@ -1177,7 +1390,7 @@ elif page == "Decisions":
                 unsafe_allow_html=True,
             )
 
-        st.markdown("")
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
         reasoning_left, reasoning_right = st.columns([1.35, 1])
 
@@ -1226,6 +1439,9 @@ elif page == "Decisions":
                 """,
                 unsafe_allow_html=True,
             )
+
+
+st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
     elif decision == "Information density":
         st.markdown(
@@ -1282,7 +1498,7 @@ elif page == "Decisions":
                 unsafe_allow_html=True,
             )
 
-        st.markdown("")
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
         density_left, density_right = st.columns([1.45, 1])
 
@@ -1343,8 +1559,10 @@ elif page == "Decisions":
                 """,
                 unsafe_allow_html=True,
             )
-
-    else:
+            
+st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
+    
+else:
         st.markdown(
             """
             <section class="workspace">
@@ -1399,7 +1617,7 @@ elif page == "Decisions":
                 unsafe_allow_html=True,
             )
 
-        st.markdown("")
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
         audience_one, audience_two, audience_three = st.columns(3)
 
@@ -1442,7 +1660,7 @@ elif page == "Decisions":
                 unsafe_allow_html=True,
             )
 
-        st.markdown("")
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
         avoid_column, rule_column = st.columns(2)
 
@@ -1571,7 +1789,7 @@ else:
             unsafe_allow_html=True,
         )
 
-    st.markdown("")
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
     clarity_column, accessibility_column = st.columns(2)
 
@@ -1597,6 +1815,8 @@ else:
             unsafe_allow_html=True,
         )
 
+    st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
+
     consistency_column, readiness_column = st.columns(2)
 
     with consistency_column:
@@ -1621,7 +1841,7 @@ else:
             unsafe_allow_html=True,
         )
 
-    st.markdown("")
+    st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
     st.markdown(
         """
