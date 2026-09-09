@@ -1278,16 +1278,163 @@ else:
     st.markdown(
         """
         <div class="section-kicker">Validation</div>
-        <div class="section-heading">A pattern is ready when it can be evaluated clearly.</div>
+        <div class="section-heading">A pattern is ready when its purpose can be tested.</div>
         <p class="section-copy">
-            The next page will show how the system is assessed for clarity, accessibility,
-            consistency, and implementation readiness across product contexts.
+            Select a product context to see the evaluation questions that guide
+            refinement before a pattern becomes part of a shared system.
         </p>
         """,
         unsafe_allow_html=True,
     )
 
-    st.info("Validation content is the next build step.")
+    validation_context = st.segmented_control(
+        "Choose a validation context",
+        ["AI investigation", "Monitoring workspace", "Operational summary"],
+        default="AI investigation",
+        label_visibility="collapsed",
+        width="stretch",
+    )
+
+    validation_content = {
+        "AI investigation": {
+            "condition": "Payment service latency exceeds expected range",
+            "purpose": "Help a responder understand an AI recommendation before taking action.",
+            "clarity": "Can the responder identify the condition, confidence level, supporting evidence, and next action without searching across separate surfaces?",
+            "accessibility": "Do written confidence labels, semantic colour, contrast, and reading order communicate the recommendation without relying on colour alone?",
+            "consistency": "Does the investigation pattern preserve the familiar sequence of condition, context, evidence, and action?",
+            "readiness": "Can confidence, evidence, and actions be expressed through reusable tokens, components, states, and content rules?",
+            "status": "Ready for a focused comprehension review",
+            "accent": "#2E8B70",
+        },
+        "Monitoring workspace": {
+            "condition": "Request latency moves above baseline after deployment",
+            "purpose": "Help a platform owner identify the next useful signal inside a dense monitoring surface.",
+            "clarity": "Can the user find the changed condition and its most relevant context before comparing every available metric?",
+            "accessibility": "Do hierarchy, labels, contrast, chart annotations, and semantic states remain understandable at different screen sizes?",
+            "consistency": "Do cards, chart annotation, and the change summary use familiar visual rules without making every signal compete?",
+            "readiness": "Can visual emphasis, metric states, card anatomy, and chart annotation be implemented through reusable component variants?",
+            "status": "Ready for density and scanning review",
+            "accent": "#D97706",
+        },
+        "Operational summary": {
+            "condition": "Customer impact is contained while remediation continues",
+            "purpose": "Help an executive partner understand material status without requiring operational detail they do not need.",
+            "clarity": "Can the user identify current impact, confidence in the response, and the next decision without entering an investigation view?",
+            "accessibility": "Does plain language, hierarchy, contrast, and clear status wording support quick understanding for a broad audience?",
+            "consistency": "Does the summary retain the same system identity while reducing information depth to match the decision context?",
+            "readiness": "Can summary language, semantic state, and escalation rules be documented for consistent use across future operational views?",
+            "status": "Ready for stakeholder comprehension review",
+            "accent": "#632CA6",
+        },
+    }
+
+    selected = validation_content[validation_context]
+
+    st.markdown(
+        f"""
+        <section class="workspace">
+            <div class="workspace-label">Selected context</div>
+            <div class="workspace-title">{validation_context}</div>
+            <p style="color:#C9BFD3; font-size:1rem; line-height:1.55; margin:0;">
+                {selected["purpose"]}
+            </p>
+        </section>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    summary_one, summary_two = st.columns([1.5, 1])
+
+    with summary_one:
+        st.markdown(
+            f"""
+            <section class="insight-card">
+                <h3>Primary condition</h3>
+                <p style="font-size:1.2rem; font-weight:750; color:#212529;">
+                    {selected["condition"]}
+                </p>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with summary_two:
+        st.markdown(
+            f"""
+            <section class="insight-card">
+                <h3>Validation state</h3>
+                <p style="color:{selected["accent"]}; font-size:1.05rem; font-weight:800;">
+                    {selected["status"]}
+                </p>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("")
+
+    clarity_column, accessibility_column = st.columns(2)
+
+    with clarity_column:
+        st.markdown(
+            f"""
+            <section class="insight-card">
+                <h3>01 Clarity</h3>
+                <p>{selected["clarity"]}</p>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with accessibility_column:
+        st.markdown(
+            f"""
+            <section class="insight-card">
+                <h3>02 Accessibility</h3>
+                <p>{selected["accessibility"]}</p>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    consistency_column, readiness_column = st.columns(2)
+
+    with consistency_column:
+        st.markdown(
+            f"""
+            <section class="insight-card">
+                <h3>03 Consistency</h3>
+                <p>{selected["consistency"]}</p>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with readiness_column:
+        st.markdown(
+            f"""
+            <section class="insight-card">
+                <h3>04 Implementation readiness</h3>
+                <p>{selected["readiness"]}</p>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("")
+
+    st.markdown(
+        """
+        <section class="workspace">
+            <div class="workspace-label">Evaluation principle</div>
+            <div class="workspace-title" style="font-size:1.35rem;">
+                A pattern is not ready because it looks resolved. It is ready when people can understand,
+                use, build, and evolve it with confidence.
+            </div>
+        </section>
+        """,
+        unsafe_allow_html=True,
+    )
 
 st.markdown(
     """
