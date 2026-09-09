@@ -771,7 +771,7 @@ if page == "Explore":
                 unsafe_allow_html=True,
             )
 
-     v      
+      
 
         note_one, note_two, note_three = st.columns(3)
 
