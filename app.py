@@ -1516,7 +1516,7 @@ else:
 st.markdown(
     """
     <div class="signal-footer">
-        Signal Field is an independent concept exploration created for a job application.
+        Signal Field is an independent concept exploration created for a job application created by Robin Sylvester.
         It uses fictional product content and does not represent Datadog work, products,
         systems, or recommendations.
     </div>
