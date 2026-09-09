@@ -902,14 +902,377 @@ elif page == "Decisions":
         <div class="section-kicker">Decisions</div>
         <div class="section-heading">Every visual decision has a tradeoff.</div>
         <p class="section-copy">
-            The next page will explain how Signal Field balances visible AI reasoning,
-            useful information density, and contextual adaptation.
+            Signal Field is guided by choices that protect clarity without reducing
+            complexity into something less useful. Select a decision to inspect the
+            tension, the direction, and the reason behind it.
         </p>
         """,
         unsafe_allow_html=True,
     )
 
-    st.info("Decision content is the next build step.")
+    decision = st.segmented_control(
+        "Choose a design decision",
+        [
+            "Visible AI reasoning",
+            "Useful information density",
+            "Contextual adaptation",
+        ],
+        default="Visible AI reasoning",
+        label_visibility="collapsed",
+        width="stretch",
+    )
+
+    if decision == "Visible AI reasoning":
+        st.markdown(
+            """
+            <section class="workspace">
+                <div class="workspace-label">Decision one</div>
+                <div class="workspace-title">AI guidance must show its reasoning before it asks for trust.</div>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        tension_column, direction_column, outcome_column = st.columns(3)
+
+        with tension_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The tension</h3>
+                    <p>
+                        AI can make a recommendation quickly, but speed becomes unhelpful
+                        when the user cannot see why a conclusion was reached.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with direction_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The direction</h3>
+                    <p>
+                        Place confidence beside the primary condition, then make the
+                        supporting signals immediately visible and easy to inspect.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with outcome_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The outcome</h3>
+                    <p>
+                        The user can understand the recommendation before acting on it,
+                        preserving judgment and trust during an investigation.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        st.markdown("")
+
+        reasoning_left, reasoning_right = st.columns([1.35, 1])
+
+        with reasoning_left:
+            st.markdown(
+                """
+                <section class="workspace">
+                    <div class="workspace-label">Chosen pattern</div>
+                    <div class="workspace-title">Payment service latency exceeds expected range</div>
+                    <div class="status-good">High confidence</div>
+                    <p style="color:#C9BFD3; font-size:1rem; line-height:1.55; margin:1rem 0 0 0;">
+                        Trace volume increased by 38 percent. Database wait time increased
+                        by 22 percent. A related deployment occurred 14 minutes ago.
+                    </p>
+                    <div style="margin-top:1.35rem; color:#FFFFFF; font-weight:800;">
+                        Inspect evidence →
+                    </div>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with reasoning_right:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>What is deliberately avoided</h3>
+                    <p>
+                        A vague AI label, an unexplained confidence score, or a primary
+                        action that appears before the user has enough context to assess it.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>System rule</h3>
+                    <p>
+                        Confidence is always paired with a written explanation and
+                        inspectable supporting signals.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+    elif decision == "Useful information density":
+        st.markdown(
+            """
+            <section class="workspace">
+                <div class="workspace-label">Decision two</div>
+                <div class="workspace-title">A dense surface needs a visible path through it.</div>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        tension_column, direction_column, outcome_column = st.columns(3)
+
+        with tension_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The tension</h3>
+                    <p>
+                        Observability work requires comprehensive data, but equal emphasis
+                        across every metric makes the next useful signal harder to find.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with direction_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The direction</h3>
+                    <p>
+                        Use contrast, grouping, stable card anatomy, and progressive
+                        emphasis to guide scanning toward what changed.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with outcome_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The outcome</h3>
+                    <p>
+                        The user keeps access to broad system information while receiving
+                        a clear visual entry point for investigation.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        st.markdown("")
+
+        density_left, density_right = st.columns([1.45, 1])
+
+        with density_left:
+            st.markdown(
+                """
+                <section class="workspace">
+                    <div class="workspace-label">Chosen pattern</div>
+                    <div style="display:flex; gap:12px; margin-top:0.9rem; flex-wrap:wrap;">
+                        <div style="background:#251B2E; border:1px solid #3B2E46; border-radius:12px; padding:15px; flex:1; min-width:120px;">
+                            <div style="color:#2E8B70; font-size:0.75rem; font-weight:800;">HEALTHY</div>
+                            <div style="color:#FFFFFF; font-size:1.75rem; font-weight:800; margin-top:6px;">99.97%</div>
+                            <div style="color:#C9BFD3; margin-top:4px;">Service health</div>
+                        </div>
+                        <div style="background:#251B2E; border:2px solid #632CA6; border-radius:12px; padding:15px; flex:1; min-width:120px;">
+                            <div style="color:#D97706; font-size:0.75rem; font-weight:800;">ELEVATED</div>
+                            <div style="color:#FFFFFF; font-size:1.75rem; font-weight:800; margin-top:6px;">187 ms</div>
+                            <div style="color:#C9BFD3; margin-top:4px;">Request latency</div>
+                        </div>
+                        <div style="background:#251B2E; border:1px solid #3B2E46; border-radius:12px; padding:15px; flex:1; min-width:120px;">
+                            <div style="color:#D97706; font-size:0.75rem; font-weight:800;">WATCH</div>
+                            <div style="color:#FFFFFF; font-size:1.75rem; font-weight:800; margin-top:6px;">0.24%</div>
+                            <div style="color:#C9BFD3; margin-top:4px;">Error rate</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:16px; background:#1D1424; border:1px solid #3B2E46; border-radius:12px; padding:16px;">
+                        <div style="color:#C9BFD3; font-size:0.78rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase;">What changed</div>
+                        <div style="color:#FFFFFF; font-size:1.15rem; font-weight:800; margin-top:8px;">Latency moved above baseline after deployment.</div>
+                    </div>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with density_right:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>What is deliberately avoided</h3>
+                    <p>
+                        Making every metric bright, every card urgent, or every colour
+                        equally saturated. Visual urgency must be earned.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>System rule</h3>
+                    <p>
+                        Strong contrast and saturated colour are reserved for the condition
+                        that needs immediate attention.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+    else:
+        st.markdown(
+            """
+            <section class="workspace">
+                <div class="workspace-label">Decision three</div>
+                <div class="workspace-title">Consistency should preserve identity, not flatten context.</div>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        tension_column, direction_column, outcome_column = st.columns(3)
+
+        with tension_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The tension</h3>
+                    <p>
+                        A shared system must remain recognizable, but different people
+                        need different levels of information and different next actions.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with direction_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The direction</h3>
+                    <p>
+                        Keep the same component anatomy while adapting the primary
+                        statement, evidence depth, semantic state, and action to context.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with outcome_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>The outcome</h3>
+                    <p>
+                        People recognize the system immediately while receiving the level
+                        of detail required for the decision in front of them.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        st.markdown("")
+
+        audience_one, audience_two, audience_three = st.columns(3)
+
+        with audience_one:
+            st.markdown(
+                """
+                <section class="workspace-card">
+                    <div class="status-critical">Incident responder</div>
+                    <h3 style="font-size:1.3rem; margin-top:1.1rem;">Latency is affecting checkout</h3>
+                    <p>Immediate condition, direct evidence, and a practical investigation action.</p>
+                    <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">Open investigation →</div>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with audience_two:
+            st.markdown(
+                """
+                <section class="workspace-card">
+                    <div class="status-attention">Platform owner</div>
+                    <h3 style="font-size:1.3rem; margin-top:1.1rem;">12 services show elevated dependency wait time</h3>
+                    <p>Trend context, relationship visibility, and a system level action.</p>
+                    <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">View service map →</div>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with audience_three:
+            st.markdown(
+                """
+                <section class="workspace-card">
+                    <div class="status-good">Executive partner</div>
+                    <h3 style="font-size:1.3rem; margin-top:1.1rem;">Customer impact contained</h3>
+                    <p>Material change, operational confidence, and a concise summary action.</p>
+                    <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">Read summary →</div>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        st.markdown("")
+
+        avoid_column, rule_column = st.columns(2)
+
+        with avoid_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>What is deliberately avoided</h3>
+                    <p>
+                        A generic screen that asks every audience to interpret the same
+                        volume of information before reaching their decision.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with rule_column:
+            st.markdown(
+                """
+                <section class="insight-card">
+                    <h3>System rule</h3>
+                    <p>
+                        Preserve shared structure. Change only the information depth and
+                        action required by the user’s decision context.
+                    </p>
+                </section>
+                """,
+                unsafe_allow_html=True,
+            )
 
 else:
     st.markdown(
