@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Signal Field",
-    page_icon="https://corp.dd-static.net/img/favicons/dd-favicon.png",
+    page_icon="◌",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -16,8 +16,7 @@ st.markdown(
 
         .block-container {
             max-width: 1280px;
-            padding-top: 2rem;
-            padding-bottom: 3rem;
+            padding: 2rem 2rem 3.5rem 2rem;
         }
 
         .stApp {
@@ -25,21 +24,28 @@ st.markdown(
             color: #212529;
         }
 
+        div[data-testid="stHorizontalBlock"] {
+            gap: 1.15rem;
+            align-items: stretch;
+        }
+
         .signal-hero {
-            background: #110617;
+            background: linear-gradient(135deg, #110617 0%, #1D1424 100%);
+            border: 1px solid #3B2E46;
             border-radius: 22px;
-            padding: 3.4rem 4rem;
-            margin: 0 0 2rem 0;
+            box-shadow: 0 12px 32px rgba(17, 6, 23, 0.16);
             color: #FFFFFF;
+            margin: 0 0 2.25rem 0;
+            padding: 3.4rem 4rem;
         }
 
         .signal-kicker {
             color: #C9BFD3;
             font-size: 0.78rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
             margin-bottom: 0.75rem;
+            text-transform: uppercase;
         }
 
         .signal-hero h1 {
@@ -55,8 +61,8 @@ st.markdown(
             color: #D9D0E5;
             font-size: 1.15rem;
             line-height: 1.55;
-            max-width: 50rem;
             margin: 1.5rem 0 0 0;
+            max-width: 50rem;
         }
 
         .section-kicker {
@@ -64,8 +70,8 @@ st.markdown(
             font-size: 0.76rem;
             font-weight: 800;
             letter-spacing: 0.1em;
+            margin: 2.3rem 0 0.45rem 0;
             text-transform: uppercase;
-            margin: 2.5rem 0 0.4rem 0;
         }
 
         .section-heading {
@@ -74,67 +80,95 @@ st.markdown(
             font-weight: 800;
             letter-spacing: -0.035em;
             line-height: 1.05;
-            margin: 0 0 0.8rem 0;
+            margin: 0 0 0.85rem 0;
         }
 
         .section-copy {
             color: #4A4F55;
             font-size: 1.02rem;
             line-height: 1.55;
-            max-width: 48rem;
-            margin: 0 0 1.4rem 0;
+            margin: 0 0 1.45rem 0;
+            max-width: 50rem;
         }
 
         .workspace {
-            background: #110617;
-            border-radius: 20px;
+            background: linear-gradient(135deg, #110617 0%, #1D1424 100%);
             border: 1px solid #3B2E46;
+            border-radius: 20px;
+            box-shadow: 0 12px 32px rgba(17, 6, 23, 0.16);
+            margin: 1.25rem 0 1.2rem 0;
             padding: 1.6rem;
-            margin-top: 1rem;
         }
 
         .workspace-label {
             color: #C9BFD3;
             font-size: 0.76rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 0.08em;
+            margin-bottom: 0.55rem;
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
         }
 
         .workspace-title {
             color: #FFFFFF;
             font-size: 1.65rem;
-            font-weight: 750;
+            font-weight: 800;
             letter-spacing: -0.025em;
-            margin: 0 0 1.25rem 0;
+            line-height: 1.15;
+            margin: 0 0 0.85rem 0;
         }
 
         .workspace-card {
-            background: #1D1424;
+            background: linear-gradient(180deg, #251B2E 0%, #1D1424 100%);
             border: 1px solid #3B2E46;
-            border-radius: 14px;
-            padding: 1.2rem;
-            min-height: 150px;
-            height: 100%;
+            border-radius: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22);
+            margin: 0;
+            min-height: 0;
+            padding: 1.25rem;
         }
 
         .workspace-card h3 {
             color: #FFFFFF;
             font-size: 1rem;
-            margin: 0 0 0.55rem 0;
+            line-height: 1.3;
+            margin: 0 0 0.6rem 0;
         }
 
         .workspace-card p {
             color: #C9BFD3;
-            font-size: 0.9rem;
-            line-height: 1.45;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .insight-card {
+            background: #FFFFFF;
+            border: 1px solid #E1E5E9;
+            border-radius: 18px;
+            box-shadow: 0 1px 2px rgba(17, 6, 23, 0.04);
+            margin: 0;
+            min-height: 0;
+            padding: 1.45rem;
+        }
+
+        .insight-card h3 {
+            color: #632CA6;
+            font-size: 1rem;
+            line-height: 1.35;
+            margin: 0 0 0.7rem 0;
+        }
+
+        .insight-card p {
+            color: #4A4F55;
+            font-size: 0.94rem;
+            line-height: 1.55;
             margin: 0;
         }
 
         .metric-value {
             color: #FFFFFF;
-            font-size: 2.25rem;
+            font-size: 2.15rem;
             font-weight: 800;
             letter-spacing: -0.04em;
             line-height: 1;
@@ -171,283 +205,211 @@ st.markdown(
             text-transform: uppercase;
         }
 
-        .insight-card {
-            background: #FFFFFF;
-            border: 1px solid #E1E5E9;
-            border-radius: 16px;
-            padding: 1.35rem;
-            min-height: 180px;
-            height: 100%;
+        .validation-gap {
+            height: 1.15rem;
         }
-
-        .insight-card h3 {
-            color: #632CA6;
-            font-size: 1rem;
-            margin: 0 0 0.7rem 0;
-        }
-
-        .insight-card p {
-            color: #4A4F55;
-            font-size: 0.94rem;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-
-/* Global layout rhythm */
-
-div[data-testid="stHorizontalBlock"] {
-    gap: 1.15rem;
-    align-items: stretch;
-}
-
-div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] {
-    margin-top: 0.15rem;
-    margin-bottom: 0.15rem;
-}
-
-div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] + div[data-testid="stHorizontalBlock"] {
-    margin-top: 1.15rem;
-}
-
-/* Card system */
-
-.insight-card {
-    background: #FFFFFF;
-    border: 1px solid #E1E5E9;
-    border-radius: 18px;
-    box-shadow: 0 1px 2px rgba(17, 6, 23, 0.04);
-    padding: 1.45rem;
-    min-height: 0;
-    margin: 0;
-    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
-}
-
-.insight-card:hover {
-    border-color: rgba(99, 44, 166, 0.38);
-    box-shadow: 0 10px 28px rgba(17, 6, 23, 0.09);
-    transform: translateY(-2px);
-}
-
-.workspace {
-    background: linear-gradient(135deg, #110617 0%, #1D1424 100%);
-    border: 1px solid #3B2E46;
-    border-radius: 20px;
-    box-shadow: 0 12px 32px rgba(17, 6, 23, 0.16);
-    padding: 1.6rem;
-    margin: 1.4rem 0 1.1rem 0;
-}
-
-.workspace-card {
-    background: linear-gradient(180deg, #251B2E 0%, #1D1424 100%);
-    border: 1px solid #3B2E46;
-    border-radius: 16px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-    padding: 1.25rem;
-    min-height: 0;
-    margin: 0;
-}
-
-.workspace-card:hover {
-    border-color: rgba(128, 0, 255, 0.62);
-}
-
-/* Native Streamlit card and control polish */
-
-[data-testid="stSegmentedControl"] {
-    background: #FFFFFF;
-    border: 1px solid #E1E5E9;
-    border-radius: 14px;
-    padding: 0.24rem;
-    margin: 1.25rem 0 1.55rem 0;
-}
-
-[data-testid="stSegmentedControl"] button {
-    border: 0 !important;
-    border-radius: 10px !important;
-    color: #4A4F55 !important;
-    font-weight: 700 !important;
-}
-
-[data-testid="stSegmentedControl"] button[aria-checked="true"] {
-    background: #632CA6 !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 2px 7px rgba(99, 44, 166, 0.26);
-}
-
-[data-testid="stTabs"] {
-    margin: 1.2rem 0 1.6rem 0;
-}
-
-[data-testid="stTabs"] [data-baseweb="tab-list"] {
-    gap: 0.45rem;
-    border-bottom: 1px solid #E1E5E9;
-}
-
-[data-testid="stTabs"] button {
-    border-radius: 10px 10px 0 0;
-    color: #4A4F55;
-    font-weight: 700;
-    padding: 0.7rem 0.9rem;
-}
-
-[data-testid="stTabs"] button[aria-selected="true"] {
-    color: #632CA6 !important;
-    border-bottom: 3px solid #632CA6 !important;
-}
-
-.stButton > button {
-    background: #FFFFFF;
-    border: 1px solid #632CA6;
-    border-radius: 10px;
-    box-shadow: none;
-    color: #632CA6;
-    font-weight: 750;
-    min-height: 2.8rem;
-    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
-}
-
-.stButton > button:hover {
-    background: #F1EAFE;
-    border-color: #632CA6;
-    color: #632CA6;
-    transform: translateY(-1px);
-}
-
-.stButton > button[kind="primary"] {
-    background: #632CA6;
-    border-color: #632CA6;
-    color: #FFFFFF;
-    box-shadow: 0 5px 14px rgba(99, 44, 166, 0.22);
-}
-
-.stButton > button[kind="primary"]:hover {
-    background: #54248F;
-    border-color: #54248F;
-    color: #FFFFFF;
-}
-
-/* Helpful separation after the two card rows on Validation */
-
-.validation-gap {
-    height: 1.15rem;
-}
-
-/* Dark system preference */
-
-@media (prefers-color-scheme: dark) {
-    [data-testid="stSegmentedControl"] {
-        background: #1D1424;
-        border-color: #3B2E46;
-    }
-
-    [data-testid="stSegmentedControl"] button {
-        color: #C9BFD3 !important;
-    }
-
-    [data-testid="stSegmentedControl"] button[aria-checked="true"] {
-        background: #632CA6 !important;
-        color: #FFFFFF !important;
-    }
-
-    [data-testid="stTabs"] [data-baseweb="tab-list"] {
-        border-color: #3B2E46;
-    }
-
-    [data-testid="stTabs"] button {
-        color: #C9BFD3 !important;
-    }
-
-    [data-testid="stTabs"] button[aria-selected="true"] {
-        color: #FFFFFF !important;
-        border-color: #8000FF !important;
-    }
-
-    .insight-card {
-        background: #1D1424;
-        border-color: #3B2E46;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
-    }
-
-    .insight-card:hover {
-        border-color: rgba(128, 0, 255, 0.7);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
-    }
-
-    .stButton > button {
-        background: #1D1424;
-        border-color: #632CA6;
-        color: #F7F3FA;
-    }
-
-    .stButton > button:hover {
-        background: #251B2E;
-        border-color: #8000FF;
-        color: #FFFFFF;
-    }
-
-    .stButton > button[kind="primary"] {
-        background: #632CA6;
-        border-color: #632CA6;
-        color: #FFFFFF;
-    }
-}
-
-/* Phone rhythm */
-
-@media (max-width: 700px) {
-    div[data-testid="stHorizontalBlock"] {
-        gap: 0.85rem;
-    }
-
-    div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] + div[data-testid="stHorizontalBlock"] {
-        margin-top: 0.85rem;
-    }
-
-    .workspace {
-        border-radius: 16px;
-        padding: 1.1rem;
-        margin: 1.1rem 0 0.9rem 0;
-    }
-
-    .workspace-card,
-    .insight-card {
-        border-radius: 14px;
-        padding: 1.1rem;
-    }
-
-    [data-testid="stSegmentedControl"] {
-        margin: 1rem 0 1.25rem 0;
-    }
-}
- 
 
         .signal-footer {
             border-top: 1px solid #E1E5E9;
             color: #4A4F55;
             font-size: 0.82rem;
-            line-height: 1.45;
+            line-height: 1.5;
             margin-top: 4rem;
             padding: 1.5rem 0 0 0;
         }
 
+        [data-testid="stSegmentedControl"] {
+            background: #FFFFFF;
+            border: 1px solid #E1E5E9;
+            border-radius: 14px;
+            margin: 1.2rem 0 1.55rem 0;
+            padding: 0.24rem;
+            width: 100%;
+        }
+
+        [data-testid="stSegmentedControl"] > div {
+            width: 100%;
+        }
+
         [data-testid="stSegmentedControl"] button {
-            border-radius: 999px !important;
+            border: 0 !important;
+            border-radius: 10px !important;
+            color: #4A4F55 !important;
             font-weight: 700 !important;
+            line-height: 1.2 !important;
+            min-height: 2.75rem;
+            padding: 0.55rem 0.8rem !important;
+            white-space: normal !important;
+        }
+
+        [data-testid="stSegmentedControl"] button[aria-checked="true"] {
+            background: #632CA6 !important;
+            box-shadow: 0 2px 7px rgba(99, 44, 166, 0.26);
+            color: #FFFFFF !important;
+        }
+
+        [data-testid="stTabs"] {
+            margin: 1.2rem 0 1.6rem 0;
+            overflow-x: auto;
+        }
+
+        [data-testid="stTabs"] [data-baseweb="tab-list"] {
+            border-bottom: 1px solid #E1E5E9;
+            gap: 0.45rem;
+        }
+
+        [data-testid="stTabs"] button {
+            border-radius: 10px 10px 0 0;
+            color: #4A4F55 !important;
+            font-weight: 700;
+            min-height: 2.6rem;
+            padding: 0.7rem 0.9rem;
+            white-space: normal !important;
+        }
+
+        [data-testid="stTabs"] button[aria-selected="true"] {
+            border-bottom: 3px solid #632CA6 !important;
+            color: #632CA6 !important;
+        }
+
+        .stButton > button {
+            background: #FFFFFF;
+            border: 1px solid #632CA6;
+            border-radius: 10px;
+            color: #632CA6;
+            font-weight: 750;
+            min-height: 2.8rem;
+        }
+
+        .stButton > button:hover {
+            background: #F1EAFE;
+            border-color: #632CA6;
+            color: #632CA6;
+        }
+
+        .stButton > button[kind="primary"] {
+            background: #632CA6;
+            border-color: #632CA6;
+            box-shadow: 0 5px 14px rgba(99, 44, 166, 0.22);
+            color: #FFFFFF;
+        }
+
+        .stButton > button[kind="primary"]:hover {
+            background: #54248F;
+            border-color: #54248F;
+            color: #FFFFFF;
+        }
+
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        .insight-card,
+        .workspace-card,
+        .workspace {
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+
+        @media (max-width: 900px) {
+            .block-container {
+                max-width: 100%;
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+
+            .signal-hero {
+                padding: 2.6rem 2rem;
+            }
+
+            .workspace-title {
+                font-size: 1.4rem;
+            }
         }
 
         @media (max-width: 700px) {
             .block-container {
-                padding: 1.2rem 1rem 2rem 1rem;
+                padding: 1rem 0.85rem 2.5rem 0.85rem;
+            }
+
+            div[data-testid="stHorizontalBlock"] {
+                gap: 0.85rem;
             }
 
             .signal-hero {
                 border-radius: 16px;
-                padding: 2.2rem 1.5rem;
+                margin-bottom: 1.3rem;
+                padding: 2rem 1.15rem;
+            }
+
+            .signal-hero h1 {
+                font-size: clamp(2.55rem, 14vw, 4.2rem);
+            }
+
+            .signal-hero p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .section-kicker {
+                margin-top: 1.7rem;
+            }
+
+            .section-heading {
+                font-size: clamp(1.8rem, 9vw, 2.7rem);
+                line-height: 1.05;
+            }
+
+            .section-copy {
+                font-size: 0.98rem;
             }
 
             .workspace {
-                padding: 1rem;
+                border-radius: 16px;
+                margin: 1rem 0;
+                padding: 1.1rem;
+            }
+
+            .workspace-title {
+                font-size: 1.28rem;
+            }
+
+            .workspace-card,
+            .insight-card {
+                border-radius: 14px;
+                padding: 1.1rem;
+            }
+
+            .metric-value {
+                font-size: 1.95rem;
+            }
+
+            .signal-footer {
+                font-size: 0.78rem;
+                margin-top: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            [data-testid="stSegmentedControl"] > div {
+                display: grid;
+                gap: 0.35rem;
+                grid-template-columns: 1fr;
+            }
+
+            [data-testid="stSegmentedControl"] button {
+                border-radius: 0.7rem !important;
+                justify-content: flex-start;
+                min-height: 2.8rem;
+                text-align: left;
+                width: 100%;
+            }
+
+            [data-testid="stTabs"] button {
+                font-size: 0.78rem !important;
+                padding-left: 0.55rem;
+                padding-right: 0.55rem;
             }
         }
 
@@ -466,6 +428,10 @@ div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] + div[
                 color: #C9BFD3;
             }
 
+            .signal-footer {
+                border-color: #3B2E46;
+            }
+
             .insight-card {
                 background: #1D1424;
                 border-color: #3B2E46;
@@ -475,209 +441,50 @@ div[data-testid="stVerticalBlock"] > div[data-testid="stHorizontalBlock"] + div[
                 color: #C9BFD3;
             }
 
-            .signal-footer {
+            [data-testid="stSegmentedControl"] {
+                background: #1D1424;
                 border-color: #3B2E46;
             }
 
-            /* Responsive control and content safeguards */
+            [data-testid="stSegmentedControl"] button {
+                color: #C9BFD3 !important;
+            }
 
-[data-testid="stSegmentedControl"] {
-    width: 100%;
-}
+            [data-testid="stSegmentedControl"] button[aria-checked="true"] {
+                background: #632CA6 !important;
+                color: #FFFFFF !important;
+            }
 
-[data-testid="stSegmentedControl"] > div {
-    width: 100%;
-}
+            [data-testid="stTabs"] [data-baseweb="tab-list"] {
+                border-color: #3B2E46;
+            }
 
-[data-testid="stSegmentedControl"] button {
-    min-height: 2.75rem;
-    white-space: normal !important;
-    line-height: 1.2 !important;
-    padding: 0.55rem 0.8rem !important;
-}
+            [data-testid="stTabs"] button {
+                color: #C9BFD3 !important;
+            }
 
-[data-testid="stTabs"] button {
-    min-height: 2.6rem;
-    white-space: normal !important;
-}
+            [data-testid="stTabs"] button[aria-selected="true"] {
+                border-color: #8000FF !important;
+                color: #FFFFFF !important;
+            }
 
-.stButton > button {
-    min-height: 2.7rem;
-    border-radius: 999px;
-    font-weight: 700;
-}
+            .stButton > button {
+                background: #1D1424;
+                border-color: #632CA6;
+                color: #F7F3FA;
+            }
 
-[data-testid="stMetric"] {
-    overflow-wrap: anywhere;
-}
+            .stButton > button:hover {
+                background: #251B2E;
+                border-color: #8000FF;
+                color: #FFFFFF;
+            }
 
-.insight-card,
-.workspace-card,
-.workspace {
-    overflow-wrap: anywhere;
-    word-break: normal;
-}
-
-svg {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (max-width: 900px) {
-    .block-container {
-        max-width: 100%;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-    }
-
-    .signal-hero {
-        padding: 2.6rem 2rem;
-    }
-
-    .section-heading {
-        max-width: 100%;
-    }
-
-    .workspace-title {
-        font-size: 1.4rem;
-    }
-
-    .insight-card,
-    .workspace-card {
-        min-height: 0;
-    }
-}
-
-@media (max-width: 700px) {
-    .block-container {
-        padding: 1rem 0.85rem 2rem 0.85rem;
-    }
-
-    .signal-hero {
-        border-radius: 14px;
-        padding: 2rem 1.15rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .signal-hero h1 {
-        font-size: clamp(2.55rem, 14vw, 4.2rem);
-    }
-
-    .signal-hero p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .section-kicker {
-        margin-top: 1.7rem;
-    }
-
-    .section-heading {
-        font-size: clamp(1.8rem, 9vw, 2.7rem);
-        line-height: 1.05;
-    }
-
-    .section-copy {
-        font-size: 0.98rem;
-    }
-
-    .workspace {
-        border-radius: 14px;
-        padding: 1rem;
-    }
-
-    .workspace-title {
-        font-size: 1.3rem;
-        line-height: 1.15;
-    }
-
-    .workspace-card,
-    .insight-card {
-        border-radius: 13px;
-        padding: 1rem;
-        min-height: 0;
-    }
-
-    [data-testid="stSegmentedControl"] {
-        overflow-x: visible;
-    }
-
-    [data-testid="stSegmentedControl"] button {
-        min-height: 3rem;
-        font-size: 0.82rem !important;
-        padding: 0.55rem 0.45rem !important;
-    }
-
-    [data-testid="stTabs"] {
-        overflow-x: auto;
-    }
-
-    [data-testid="stTabs"] button {
-        font-size: 0.85rem !important;
-        padding-left: 0.55rem;
-        padding-right: 0.55rem;
-    }
-
-    .metric-value {
-        font-size: 1.95rem;
-    }
-
-    .signal-footer {
-        margin-top: 2.5rem;
-        font-size: 0.78rem;
-    }
-}
-
-@media (max-width: 480px) {
-    [data-testid="stSegmentedControl"] {
-        display: block;
-    }
-
-    [data-testid="stSegmentedControl"] > div {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.35rem;
-    }
-
-    [data-testid="stSegmentedControl"] button {
-        width: 100%;
-        justify-content: flex-start;
-        text-align: left;
-        border-radius: 0.7rem !important;
-        min-height: 2.8rem;
-    }
-
-    [data-testid="stTabs"] button {
-        font-size: 0.78rem !important;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    [data-testid="stSegmentedControl"] button,
-    [data-testid="stTabs"] button {
-        color: #F7F3FA !important;
-    }
-
-    [data-testid="stSegmentedControl"] button[aria-checked="true"] {
-        background: #632CA6 !important;
-        color: #FFFFFF !important;
-    }
-
-    [data-testid="stTabs"] button[aria-selected="true"] {
-        color: #FFFFFF !important;
-        border-color: #8000FF !important;
-    }
-
-    .stButton > button {
-        border-color: #632CA6 !important;
-        color: #F7F3FA !important;
-        background: #1D1424 !important;
-    }
-
-    .stButton > button[kind="primary"] {
-        background: #632CA6 !important;
-        color: #FFFFFF !important;
-    }
+            .stButton > button[kind="primary"] {
+                background: #632CA6;
+                border-color: #632CA6;
+                color: #FFFFFF;
+            }
         }
     </style>
     """,
@@ -748,8 +555,8 @@ if page == "Explore":
                     <div class="status-good">High confidence</div>
                     <h3>Why this needs attention</h3>
                     <p>Trace volume increased by 38 percent.</p>
-                    <p style="margin-top: 0.55rem;">Database wait time increased by 22 percent.</p>
-                    <p style="margin-top: 0.55rem;">A related deployment occurred 14 minutes ago.</p>
+                    <p style="margin-top:0.55rem;">Database wait time increased by 22 percent.</p>
+                    <p style="margin-top:0.55rem;">A related deployment occurred 14 minutes ago.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
@@ -771,7 +578,7 @@ if page == "Explore":
                 unsafe_allow_html=True,
             )
 
-      
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
         note_one, note_two, note_three = st.columns(3)
 
@@ -791,7 +598,7 @@ if page == "Explore":
                 """
                 <section class="insight-card">
                     <h3>Confidence with context</h3>
-                    <p>Confidence is not decorative reassurance. It is connected to the signals that make the recommendation credible.</p>
+                    <p>Confidence is connected to the signals that make the recommendation credible.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
@@ -802,13 +609,13 @@ if page == "Explore":
                 """
                 <section class="insight-card">
                     <h3>Action after understanding</h3>
-                    <p>Clear next steps appear after the primary condition and evidence, keeping the user in control of the investigation.</p>
+                    <p>Clear next steps appear after the primary condition and evidence, keeping the user in control.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
             )
 
-    elif context == "Monitoring workspace":
+    elif context == "Monitoring":
         st.markdown(
             """
             <section class="workspace">
@@ -869,12 +676,14 @@ if page == "Explore":
                 unsafe_allow_html=True,
             )
 
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
+
         chart_column, change_column = st.columns([2.2, 1])
 
         with chart_column:
             st.markdown(
                 """
-                <section class="workspace-card" style="margin-top:1rem;">
+                <section class="workspace-card">
                     <div class="workspace-label">Latency over the last hour</div>
                     <svg viewBox="0 0 700 170" width="100%" role="img" aria-label="Latency trend with late increase">
                         <line x1="15" y1="145" x2="685" y2="145" stroke="#3B2E46" stroke-width="2"/>
@@ -891,7 +700,7 @@ if page == "Explore":
         with change_column:
             st.markdown(
                 """
-                <section class="workspace-card" style="margin-top:1rem;">
+                <section class="workspace-card">
                     <div class="workspace-label">What changed</div>
                     <h3>Latency moved above baseline</h3>
                     <p>Database wait time increased after the latest deployment.</p>
@@ -927,7 +736,7 @@ if page == "Explore":
                 """
                 <section class="workspace-card">
                     <div class="status-critical">Incident responder</div>
-                    <h3 style="font-size:1.45rem; margin-top:1.2rem;">Latency is affecting checkout</h3>
+                    <h3 style="font-size:1.4rem; margin-top:1.2rem;">Latency is affecting checkout</h3>
                     <p>High confidence correlation across traces and database activity.</p>
                     <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">Open investigation →</div>
                 </section>
@@ -940,7 +749,7 @@ if page == "Explore":
                 """
                 <section class="workspace-card">
                     <div class="status-attention">Platform owner</div>
-                    <h3 style="font-size:1.45rem; margin-top:1.2rem;">12 services show elevated dependency wait time</h3>
+                    <h3 style="font-size:1.4rem; margin-top:1.2rem;">12 services show elevated dependency wait time</h3>
                     <p>The trend began after the latest production deployment.</p>
                     <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">View service map →</div>
                 </section>
@@ -953,7 +762,7 @@ if page == "Explore":
                 """
                 <section class="workspace-card">
                     <div class="status-good">Executive partner</div>
-                    <h3 style="font-size:1.45rem; margin-top:1.2rem;">Customer impact contained</h3>
+                    <h3 style="font-size:1.4rem; margin-top:1.2rem;">Customer impact contained</h3>
                     <p>The incident is understood and remediation is in progress.</p>
                     <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">Read operational summary →</div>
                 </section>
@@ -1002,117 +811,59 @@ elif page == "System":
 
         token_one, token_two, token_three, token_four, token_five = st.columns(5)
 
-        with token_one:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:52px; border-radius:10px; background:#110617; margin-bottom:1rem;"></div>
-                    <h3>Night field</h3>
-                    <p>#110617<br>Focused inspection and immersive product fields.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        token_data = [
+            ("#110617", "Night field", "Focused inspection and immersive product fields."),
+            ("#632CA6", "Signal violet", "Primary action, active state, and meaningful direction."),
+            ("#8000FF", "Electric violet", "Rare moments of emphasis and future facing focus."),
+            ("#2E8B70", "Confidence", "Positive state, paired with clear supporting language."),
+            ("#D97706", "Attention", "Unresolved condition, paired with an explanation and next step."),
+        ]
 
-        with token_two:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:52px; border-radius:10px; background:#632CA6; margin-bottom:1rem;"></div>
-                    <h3>Signal violet</h3>
-                    <p>#632CA6<br>Primary action, active state, and meaningful direction.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        for column, token in zip(
+            [token_one, token_two, token_three, token_four, token_five],
+            token_data,
+        ):
+            colour, name, description = token
+            with column:
+                st.markdown(
+                    f"""
+                    <section class="insight-card">
+                        <div style="height:52px; border-radius:10px; background:{colour}; margin-bottom:1rem;"></div>
+                        <h3>{name}</h3>
+                        <p>{colour}<br>{description}</p>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
-        with token_three:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:52px; border-radius:10px; background:#8000FF; margin-bottom:1rem;"></div>
-                    <h3>Electric violet</h3>
-                    <p>#8000FF<br>Rare moments of emphasis and future facing focus.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        with token_four:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:52px; border-radius:10px; background:#2E8B70; margin-bottom:1rem;"></div>
-                    <h3>Confidence</h3>
-                    <p>#2E8B70<br>Positive state, paired with clear supporting language.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        with token_five:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:52px; border-radius:10px; background:#D97706; margin-bottom:1rem;"></div>
-                    <h3>Attention</h3>
-                    <p>#D97706<br>Unresolved condition, paired with an explanation and next step.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        st.markdown("")
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
         surface_one, surface_two, surface_three, surface_four = st.columns(4)
 
-        with surface_one:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:42px; border-radius:10px; background:#F5F5F5; border:1px solid #E1E5E9; margin-bottom:1rem;"></div>
-                    <h3>Cloud surface</h3>
-                    <p>#F5F5F5<br>Quiet page fields and secondary surfaces.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        surface_data = [
+            ("#F5F5F5", "Cloud surface", "Quiet page fields and secondary surfaces.", True),
+            ("#FFFFFF", "White surface", "Primary reading and working surfaces.", True),
+            ("#E1E5E9", "Structure line", "Dividers, boundaries, and low emphasis structure.", False),
+            ("#4A4F55", "Quiet graphite", "Supporting copy, labels, and metadata.", False),
+        ]
 
-        with surface_two:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:42px; border-radius:10px; background:#FFFFFF; border:1px solid #E1E5E9; margin-bottom:1rem;"></div>
-                    <h3>White surface</h3>
-                    <p>#FFFFFF<br>Primary reading and working surfaces.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        with surface_three:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:42px; border-radius:10px; background:#E1E5E9; margin-bottom:1rem;"></div>
-                    <h3>Structure line</h3>
-                    <p>#E1E5E9<br>Dividers, boundaries, and low emphasis structure.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        with surface_four:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <div style="height:42px; border-radius:10px; background:#4A4F55; margin-bottom:1rem;"></div>
-                    <h3>Quiet graphite</h3>
-                    <p>#4A4F55<br>Supporting copy, labels, and metadata.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        for column, token in zip(
+            [surface_one, surface_two, surface_three, surface_four],
+            surface_data,
+        ):
+            colour, name, description, needs_border = token
+            border = "border:1px solid #E1E5E9;" if needs_border else ""
+            with column:
+                st.markdown(
+                    f"""
+                    <section class="insight-card">
+                        <div style="height:42px; border-radius:10px; background:{colour}; {border} margin-bottom:1rem;"></div>
+                        <h3>{name}</h3>
+                        <p>{colour}<br>{description}</p>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
     with hierarchy_tab:
         st.markdown("#### The eye needs a reliable path")
@@ -1120,8 +871,8 @@ elif page == "System":
         st.markdown(
             """
             <p class="section-copy">
-                The system uses hierarchy to move from condition, to context, to action.
-                Information may be dense, but its reading order should never be unclear.
+                The system moves from condition, to context, to action. Information may be dense,
+                but its reading order should never be unclear.
             </p>
             """,
             unsafe_allow_html=True,
@@ -1148,35 +899,20 @@ elif page == "System":
             )
 
         with hierarchy_right:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>01 Condition</h3>
-                    <p>The primary condition earns the largest type and strongest contrast.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>02 Context</h3>
-                    <p>Evidence and confidence explain why the condition deserves attention.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>03 Action</h3>
-                    <p>A clear next step follows understanding rather than replacing it.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+            for title, copy in [
+                ("01 Condition", "The primary condition earns the largest type and strongest contrast."),
+                ("02 Context", "Evidence and confidence explain why the condition deserves attention."),
+                ("03 Action", "A clear next step follows understanding rather than replacing it."),
+            ]:
+                st.markdown(
+                    f"""
+                    <section class="insight-card" style="margin-bottom:1rem;">
+                        <h3>{title}</h3>
+                        <p>{copy}</p>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
     with spacing_tab:
         st.markdown("#### Space gives information room to be understood")
@@ -1184,8 +920,8 @@ elif page == "System":
         st.markdown(
             """
             <p class="section-copy">
-                Signal Field uses a four point rhythm. The purpose is not visual decoration.
-                Consistent spacing creates scan paths, separates tasks, and helps dense content breathe.
+                Signal Field uses a four point rhythm. Consistent spacing creates scan paths,
+                separates tasks, and gives dense content a place to breathe.
             </p>
             """,
             unsafe_allow_html=True,
@@ -1218,9 +954,11 @@ elif page == "System":
                     unsafe_allow_html=True,
                 )
 
+        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
+
         st.markdown(
             """
-            <section class="workspace" style="margin-top:1.5rem;">
+            <section class="workspace">
                 <div class="workspace-label">Spacing in practice</div>
                 <div style="background:#1D1424; border:1px solid #3B2E46; border-radius:14px; padding:24px;">
                     <div style="color:#FFFFFF; font-weight:800; font-size:1.35rem;">Primary condition</div>
@@ -1269,45 +1007,21 @@ elif page == "System":
             )
 
         with anatomy_right:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>01 Context</h3>
-                    <p>Names the source or type of information.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>02 State</h3>
-                    <p>Communicates confidence or urgency with colour and written meaning.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>03 Evidence</h3>
-                    <p>Explains the condition with concise, inspectable signals.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>04 Action</h3>
-                    <p>Moves the user forward after they have enough context to act.</p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+            for title, copy in [
+                ("01 Context", "Names the source or type of information."),
+                ("02 State", "Communicates confidence or urgency with colour and written meaning."),
+                ("03 Evidence", "Explains the condition with concise, inspectable signals."),
+                ("04 Action", "Moves the user forward after they have enough context to act."),
+            ]:
+                st.markdown(
+                    f"""
+                    <section class="insight-card" style="margin-bottom:1rem;">
+                        <h3>{title}</h3>
+                        <p>{copy}</p>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
 elif page == "Decisions":
     st.markdown(
@@ -1325,11 +1039,7 @@ elif page == "Decisions":
 
     decision = st.segmented_control(
         "Choose a design decision",
-        [
-            "AI reasoning",
-            "Information density",
-            "Context adaptation",
-        ],
+        ["AI reasoning", "Information density", "Context adaptation"],
         default="AI reasoning",
         label_visibility="collapsed",
         width="stretch",
@@ -1348,47 +1058,36 @@ elif page == "Decisions":
 
         tension_column, direction_column, outcome_column = st.columns(3)
 
-        with tension_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The tension</h3>
-                    <p>
-                        AI can make a recommendation quickly, but speed becomes unhelpful
-                        when the user cannot see why a conclusion was reached.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        decision_cards = [
+            (
+                "The tension",
+                "AI can make a recommendation quickly, but speed becomes unhelpful when the user cannot see why a conclusion was reached.",
+            ),
+            (
+                "The direction",
+                "Place confidence beside the primary condition, then make the supporting signals immediately visible and easy to inspect.",
+            ),
+            (
+                "The outcome",
+                "The user can understand the recommendation before acting on it, preserving judgment and trust during an investigation.",
+            ),
+        ]
 
-        with direction_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The direction</h3>
-                    <p>
-                        Place confidence beside the primary condition, then make the
-                        supporting signals immediately visible and easy to inspect.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        with outcome_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The outcome</h3>
-                    <p>
-                        The user can understand the recommendation before acting on it,
-                        preserving judgment and trust during an investigation.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        for column, card in zip(
+            [tension_column, direction_column, outcome_column],
+            decision_cards,
+        ):
+            title, copy = card
+            with column:
+                st.markdown(
+                    f"""
+                    <section class="insight-card">
+                        <h3>{title}</h3>
+                        <p>{copy}</p>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
         st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
@@ -1402,8 +1101,8 @@ elif page == "Decisions":
                     <div class="workspace-title">Payment service latency exceeds expected range</div>
                     <div class="status-good">High confidence</div>
                     <p style="color:#C9BFD3; font-size:1rem; line-height:1.55; margin:1rem 0 0 0;">
-                        Trace volume increased by 38 percent. Database wait time increased
-                        by 22 percent. A related deployment occurred 14 minutes ago.
+                        Trace volume increased by 38 percent. Database wait time increased by 22 percent.
+                        A related deployment occurred 14 minutes ago.
                     </p>
                     <div style="margin-top:1.35rem; color:#FFFFFF; font-weight:800;">
                         Inspect evidence →
@@ -1416,12 +1115,9 @@ elif page == "Decisions":
         with reasoning_right:
             st.markdown(
                 """
-                <section class="insight-card">
+                <section class="insight-card" style="margin-bottom:1rem;">
                     <h3>What is deliberately avoided</h3>
-                    <p>
-                        A vague AI label, an unexplained confidence score, or a primary
-                        action that appears before the user has enough context to assess it.
-                    </p>
+                    <p>A vague AI label, an unexplained confidence score, or an action that appears before the user has enough context to assess it.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
@@ -1431,20 +1127,13 @@ elif page == "Decisions":
                 """
                 <section class="insight-card">
                     <h3>System rule</h3>
-                    <p>
-                        Confidence is always paired with a written explanation and
-                        inspectable supporting signals.
-                    </p>
+                    <p>Confidence is always paired with a written explanation and inspectable supporting signals.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
             )
 
-        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
-
     elif decision == "Information density":
-
-    
         st.markdown(
             """
             <section class="workspace">
@@ -1457,47 +1146,36 @@ elif page == "Decisions":
 
         tension_column, direction_column, outcome_column = st.columns(3)
 
-        with tension_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The tension</h3>
-                    <p>
-                        Observability work requires comprehensive data, but equal emphasis
-                        across every metric makes the next useful signal harder to find.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        decision_cards = [
+            (
+                "The tension",
+                "Observability work requires comprehensive data, but equal emphasis across every metric makes the next useful signal harder to find.",
+            ),
+            (
+                "The direction",
+                "Use contrast, grouping, stable card anatomy, and progressive emphasis to guide scanning toward what changed.",
+            ),
+            (
+                "The outcome",
+                "The user keeps access to broad system information while receiving a clear visual entry point for investigation.",
+            ),
+        ]
 
-        with direction_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The direction</h3>
-                    <p>
-                        Use contrast, grouping, stable card anatomy, and progressive
-                        emphasis to guide scanning toward what changed.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        with outcome_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The outcome</h3>
-                    <p>
-                        The user keeps access to broad system information while receiving
-                        a clear visual entry point for investigation.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        for column, card in zip(
+            [tension_column, direction_column, outcome_column],
+            decision_cards,
+        ):
+            title, copy = card
+            with column:
+                st.markdown(
+                    f"""
+                    <section class="insight-card">
+                        <h3>{title}</h3>
+                        <p>{copy}</p>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
         st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
@@ -1537,12 +1215,9 @@ elif page == "Decisions":
         with density_right:
             st.markdown(
                 """
-                <section class="insight-card">
+                <section class="insight-card" style="margin-bottom:1rem;">
                     <h3>What is deliberately avoided</h3>
-                    <p>
-                        Making every metric bright, every card urgent, or every colour
-                        equally saturated. Visual urgency must be earned.
-                    </p>
+                    <p>Making every metric bright, every card urgent, or every colour equally saturated. Visual urgency must be earned.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
@@ -1552,18 +1227,13 @@ elif page == "Decisions":
                 """
                 <section class="insight-card">
                     <h3>System rule</h3>
-                    <p>
-                        Strong contrast and saturated colour are reserved for the condition
-                        that needs immediate attention.
-                    </p>
+                    <p>Strong contrast and saturated colour are reserved for the condition that needs immediate attention.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
             )
-            
-st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
-    
-else:
+
+    else:
         st.markdown(
             """
             <section class="workspace">
@@ -1576,90 +1246,82 @@ else:
 
         tension_column, direction_column, outcome_column = st.columns(3)
 
-        with tension_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The tension</h3>
-                    <p>
-                        A shared system must remain recognizable, but different people
-                        need different levels of information and different next actions.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        decision_cards = [
+            (
+                "The tension",
+                "A shared system must remain recognizable, but different people need different levels of information and different next actions.",
+            ),
+            (
+                "The direction",
+                "Keep the same component anatomy while adapting the primary statement, evidence depth, semantic state, and action to context.",
+            ),
+            (
+                "The outcome",
+                "People recognize the system immediately while receiving the level of detail required for the decision in front of them.",
+            ),
+        ]
 
-        with direction_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The direction</h3>
-                    <p>
-                        Keep the same component anatomy while adapting the primary
-                        statement, evidence depth, semantic state, and action to context.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        with outcome_column:
-            st.markdown(
-                """
-                <section class="insight-card">
-                    <h3>The outcome</h3>
-                    <p>
-                        People recognize the system immediately while receiving the level
-                        of detail required for the decision in front of them.
-                    </p>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        for column, card in zip(
+            [tension_column, direction_column, outcome_column],
+            decision_cards,
+        ):
+            title, copy = card
+            with column:
+                st.markdown(
+                    f"""
+                    <section class="insight-card">
+                        <h3>{title}</h3>
+                        <p>{copy}</p>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
         st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
         audience_one, audience_two, audience_three = st.columns(3)
 
-        with audience_one:
-            st.markdown(
-                """
-                <section class="workspace-card">
-                    <div class="status-critical">Incident responder</div>
-                    <h3 style="font-size:1.3rem; margin-top:1.1rem;">Latency is affecting checkout</h3>
-                    <p>Immediate condition, direct evidence, and a practical investigation action.</p>
-                    <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">Open investigation →</div>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        audience_data = [
+            (
+                "status-critical",
+                "Incident responder",
+                "Latency is affecting checkout",
+                "Immediate condition, direct evidence, and a practical investigation action.",
+                "Open investigation →",
+            ),
+            (
+                "status-attention",
+                "Platform owner",
+                "12 services show elevated dependency wait time",
+                "Trend context, relationship visibility, and a system level action.",
+                "View service map →",
+            ),
+            (
+                "status-good",
+                "Executive partner",
+                "Customer impact contained",
+                "Material change, operational confidence, and a concise summary action.",
+                "Read summary →",
+            ),
+        ]
 
-        with audience_two:
-            st.markdown(
-                """
-                <section class="workspace-card">
-                    <div class="status-attention">Platform owner</div>
-                    <h3 style="font-size:1.3rem; margin-top:1.1rem;">12 services show elevated dependency wait time</h3>
-                    <p>Trend context, relationship visibility, and a system level action.</p>
-                    <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">View service map →</div>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        with audience_three:
-            st.markdown(
-                """
-                <section class="workspace-card">
-                    <div class="status-good">Executive partner</div>
-                    <h3 style="font-size:1.3rem; margin-top:1.1rem;">Customer impact contained</h3>
-                    <p>Material change, operational confidence, and a concise summary action.</p>
-                    <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">Read summary →</div>
-                </section>
-                """,
-                unsafe_allow_html=True,
-            )
+        for column, card in zip(
+            [audience_one, audience_two, audience_three],
+            audience_data,
+        ):
+            status_class, audience, title, copy, action = card
+            with column:
+                st.markdown(
+                    f"""
+                    <section class="workspace-card">
+                        <div class="{status_class}">{audience}</div>
+                        <h3 style="font-size:1.3rem; margin-top:1.1rem;">{title}</h3>
+                        <p>{copy}</p>
+                        <div style="margin-top:1.3rem; color:#FFFFFF; font-weight:800;">{action}</div>
+                    </section>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
         st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
@@ -1670,10 +1332,7 @@ else:
                 """
                 <section class="insight-card">
                     <h3>What is deliberately avoided</h3>
-                    <p>
-                        A generic screen that asks every audience to interpret the same
-                        volume of information before reaching their decision.
-                    </p>
+                    <p>A generic screen that asks every audience to interpret the same volume of information before reaching their decision.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
@@ -1684,10 +1343,7 @@ else:
                 """
                 <section class="insight-card">
                     <h3>System rule</h3>
-                    <p>
-                        Preserve shared structure. Change only the information depth and
-                        action required by the user’s decision context.
-                    </p>
+                    <p>Preserve shared structure. Change only the information depth and action required by the user’s decision context.</p>
                 </section>
                 """,
                 unsafe_allow_html=True,
@@ -1725,7 +1381,7 @@ else:
             "status": "Ready for a focused comprehension review",
             "accent": "#2E8B70",
         },
-        "Monitoring workspace": {
+        "Monitoring": {
             "condition": "Request latency moves above baseline after deployment",
             "purpose": "Help a platform owner identify the next useful signal inside a dense monitoring surface.",
             "clarity": "Can the user find the changed condition and its most relevant context before comparing every available metric?",
@@ -1790,7 +1446,7 @@ else:
             unsafe_allow_html=True,
         )
 
-        st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
+    st.markdown('<div class="validation-gap"></div>', unsafe_allow_html=True)
 
     clarity_column, accessibility_column = st.columns(2)
 
